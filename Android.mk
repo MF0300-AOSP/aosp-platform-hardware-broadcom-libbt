@@ -88,5 +88,8 @@ endif
 ifeq ($(TARGET_PRODUCT), gce_x86_phone)
     include $(LOCAL_PATH)/conf/google/gce_x86/Android.mk
 endif
+ifeq ($(TARGET_PRODUCT), mf0300_6dq)
+    include $(LOCAL_PATH)/conf/fsl/mf0300_6dq/Android.mk
+endif
 
 endif # BOARD_HAVE_BLUETOOTH_BCM
