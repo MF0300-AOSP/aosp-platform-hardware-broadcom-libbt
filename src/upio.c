@@ -224,10 +224,12 @@ void upio_start_stop_timer(int action) {
         memset(&ts, 0, sizeof(ts));
     }
 
-    if (timer_settime(lpm_proc_cb.timer_id, 0, &ts, 0) == 0) {
-        UPIODBG("%s : timer_settime success", __FUNCTION__);
-    } else {
-        UPIODBG("%s : timer_settime failed", __FUNCTION__);
+    if(lpm_proc_cb.timer_created == TRUE) {
+        if (timer_settime(lpm_proc_cb.timer_id, 0, &ts, 0) == 0) {
+            UPIODBG("%s : timer_settime success", __FUNCTION__);
+        } else {
+            UPIODBG("%s : timer_settime failed", __FUNCTION__);
+        }
     }
 }
 #endif
