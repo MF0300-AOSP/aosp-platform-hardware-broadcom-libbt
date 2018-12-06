@@ -218,6 +218,8 @@ void upio_start_stop_timer(int action) {
             ts.it_value.tv_nsec = 1000000*(PROC_BTWRITE_TIMER_TIMEOUT_MS%1000);
             ts.it_interval.tv_sec = 0;
             ts.it_interval.tv_nsec = 0;
+        } else {
+            UPIODBG("%s : lpm_proc_cb.timer is not created yet", __FUNCTION__);
         }
     } else {
         /* unarm timer if writing 0 to lpm; reduce unnecessary user space wakeup */
