@@ -34,6 +34,9 @@ LOCAL_PROPRIETARY_MODULE := true
 include $(LOCAL_PATH)/vnd_buildcfg.mk
 
 include $(BUILD_SHARED_LIBRARY)
+ifeq ($(TARGET_PRODUCT), mf0300_6dq)
+	include $(LOCAL_PATH)/conf/fsl/mf0300_6dq/Android.mk
+endif
 ifeq ($(TARGET_PRODUCT), sabresd_6sx)
 	include $(LOCAL_PATH)/conf/fsl/sabresd_6sx/Android.mk
 endif
